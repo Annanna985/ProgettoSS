@@ -1,0 +1,176 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@400;500&family=Poppins:wght@400;500;600;700&family=Roboto+Condensed:wght@700&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+#home-icon{
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+body {
+    background-color: #ffffff;
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.58;
+}
+
+a:link { text-decoration: none; }
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+a {
+    color: #ffffff;
+}
+
+.file-container {
+    max-width: 700px;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 0.27);
+    margin: 180px auto 400px;
+    padding: 20px;
+    min-height: 300px;
+    background-color: #fff;
+}
+
+.file-upload-header {
+    text-align: center;
+    border-bottom: 1px solid #ececec;
+}
+
+h3 {
+    text-align: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.file-upload {
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.file-download {
+    text-align: left;
+    padding-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+input[type=text] , select, textarea {
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+input[type="file"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+.file-input {
+    width: 100%;
+    
+}
+
+.submit-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    outline: none;
+    vertical-align: middle;
+    min-height: 40px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 0 15px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    transition: all 0.4s ease-in-out;
+    font-size: 14px;
+}
+
+.submit-btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 400;
+    pointer-events: none; 
+}
+
+.container {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+  
+@media screen and (min-width: 500px) {
+    .file-input {
+        width: calc(100% - 115px);
+    }
+
+    .submit-btn {
+        display: inline-block;
+        margin-top: 0;
+        margin-left: 10px;
+    }
+}
+
+/* Breakpoints / Making Responsive */
+@media (max-widtg:1080px) {
+    .nav {
+        padding: 15px;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+   
+}
+
+@media (max-widtg:400px) {
+    .nav {
+        padding: 11px;
+    }
+ 
+}
+

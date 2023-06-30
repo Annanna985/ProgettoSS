@@ -1,0 +1,223 @@
+:root{
+    /*  Primary */
+
+    --red: hsl(0, 78%, 62%);
+    --cyan: hsl(180, 62%, 55%);
+    --orange: hsl(34, 97%, 64%);
+    --blue: hsl(212, 86%, 64%);
+    --green: #4CAF50;
+
+    /* Neutral */
+
+    --very-dark-blue: hsl(234, 12%, 34%);
+    --grayish-blue: hsl(229, 6%, 66%);
+    --very-light-gray: hsl(0, 0%, 98%);
+}
+
+*{
+    box-sizing: border-box;
+}
+
+a:link { text-decoration: none; }
+
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    background-color: var(--very-light-gray);
+}
+
+.content{
+    width: 82%;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    
+    /* max-width: 500px; */
+    /* margin-right: auto;
+    margin-left: auto; */
+}
+
+.mission-container{
+    text-align: center;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    text-align: left;
+
+    box-shadow: 0px .3rem 1rem hsl(0, 0%, 80%);
+    border-radius: .3rem;
+}
+
+.cyan{
+    border-top: .2rem solid var(--cyan);
+}
+
+.red{
+    border-top: .2rem solid var(--red);
+}
+
+.orange{
+    border-top: .2rem solid var(--orange);
+}
+
+.blue{
+    border-top: .2rem solid var(--blue);
+}
+.green{
+    border-top: .2rem solid var(--green);
+}
+.title{
+    margin-bottom: .5rem;
+    
+    font-weight: 200;
+    
+    color: var(--very-dark-blue);
+}
+
+.subtitle{
+    margin-top: 0;
+
+    font-weight: 600;
+    
+    color: var(--very-dark-blue);
+}
+
+.goal,
+.description{
+    color: var(--grayish-blue);
+}
+
+.goal{
+    margin-bottom: 4.5rem;
+    
+    line-height: 1.3rem;
+    font-size: .93rem;
+}
+
+.feature{
+    margin-top: 0;
+    margin-bottom: .5rem;
+
+    color: var(--very-dark-blue);
+}
+.description{
+    margin-top: 0;
+    margin-bottom: 2rem;
+
+    line-height: 1.5rem;
+    font-size: .85rem;
+}
+img{
+    align-self: flex-end;
+    width: 3.5rem;
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--bg-color);
+    box-shadow: 0 1px 4px hsl(0 4% 15% / 10%);
+    z-index: 100;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+.logo {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 400;
+    pointer-events: none; 
+}
+
+.container {
+    max-width: 1068px;
+    margin: auto;
+    width: 100%;
+}
+
+
+@media (min-width: 800px){
+
+    .mission-container{
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .title,
+    .subtitle{
+        font-size: 2.5rem;
+    }
+
+    .goal{
+        font-size: 1.1rem;
+    }
+    .cards{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .cards > .card,
+    .two-cards{
+        width: 30%;
+    }
+
+  
+}
+.accedi-btn {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    outline: none;
+    vertical-align: middle;
+    min-height: 40px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    padding: 0 15px;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,0.2);
+    transition: all 0.4s ease-in-out;
+    font-size: 14px;
+    top:0;
+}
+
+.accedi-btn:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #4CAF50; /* Green */
+}
+
+/* Breakpoints / Making Responsive */
+@media (max-widtg:1080px) {
+    .nav {
+        padding: 15px;
+    }
+    .logo {
+        font-size: 1rem;
+    }
+   
+}
+
+@media (max-widtg:400px) {
+    .nav {
+        padding: 11px;
+    }
+ 
+}

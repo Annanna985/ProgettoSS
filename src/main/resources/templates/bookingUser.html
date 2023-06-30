@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../static/bookingstyles.css" type= "text/css"/>
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' > 
+        <title>Realm-Plants</title>
+        <script th:inline="javascript">
+            
+
+             function onloadpage(){
+            /*<![CDATA[*/
+            let table = document.querySelector(".tbody");  
+            var message = /*[[${bookingsuser}]]*/ 'default';
+            /*]]>*/
+                var cardfor = '';
+
+                for (const i in message) {
+                    console.log(message[i].nameUser)
+                    cardfor += ` 
+                                    <tr class="active-row"> 
+                                        <td><p>${message[i].namePlant}</p></td>
+                                        <td><p>${message[i].quantity}</p></td>
+                                    </tr>`;
+                    };
+                    
+                table.innerHTML = cardfor;
+            }
+          
+            function homeClick(){
+                console.log("premuto");
+                window.location.href = '/user/getplants';
+            }
+        </script>
+        </script>   
+    </head>
+    <body>
+         <!-- Header -->
+         <header> <!-- Nav -->
+            <div class="nav container">
+                <a href="" class="logo">Realm-Plants <i class='bx bx-leaf'></i></a>
+                <i class='bx bx-home' id="home-icon" onClick = homeClick()> </i> 
+            </div> 
+        </header>
+        <div layout:fragment="content" class="row">
+            <div class="file-container">
+              <!--  <h3>
+                    <a href="/create" class="btn btn-primary"><span class="glyphicon glyphicon-plus-sign"></span> Login</a>
+                </h3>--> 
+                <h2>Lista prenotazioni</h2>
+                <div class="table-responsive">
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Nome pianta </th>
+                                <th>Quantità </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            <body onload = "onloadpage()"> </body>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+

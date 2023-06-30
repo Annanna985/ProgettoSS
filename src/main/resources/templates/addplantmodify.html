@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport">
+    <title>Realm-Plants</title>
+    <link rel="stylesheet" href="../static/addplantstyle.css" />
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' > 
+    <script th:inline="javascript">
+        function homeClick(){
+            console.log("premuto");
+            window.location.href = '/admin/getplants';
+        } 
+    </script>
+</head>
+<body>
+
+      <!-- Aggiungi questo script per mostrare un alert JavaScript -->
+  <script th:if="${error}">
+    window.onload = function() {
+      alert("[[${error}]]");
+      window.location.href = '/admin/addplant';   
+    };
+  </script>
+    <!-- Header -->
+    <header> <!-- Nav -->
+        <div class="nav container">
+            <a href="" class="logo">Realm-Plants <i class='bx bx-leaf'></i></a> 
+            <i class='bx bx-home' id="home-icon" onClick = homeClick()> </i>
+        </div> 
+    </header>
+
+    <div class="file-container">
+        <div class="file-upload-header">
+            <h2>Aggiungi nuova pianta</h2>
+        </div>
+        <div class="file-upload">
+            <h3>  </h3>
+            <form id="fileUploadForm" method="POST" action="/admin/uploadplant" enctype="multipart/form-data">
+                <input type="text" name="name" placeholder="Inserire nome pianta" pattern="[A-Za-z]+" title="Inserisci un nome valido (solo lettere)"
+                oninvalid="setCustomValidity('Inserisci un nome valido (solo lettere)')" oninput="setCustomValidity('')"required />
+                <input type="text" name="altezza" placeholder="Inserire altezza in cm" pattern= "^\d+(.\d+)?$"  title="Inserisci una altezza valida (valore numerico con punto come separatore decimale)"
+                oninvalid="setCustomValidity('Inserisci una altezza valida (valore numerico con punto come separatore decimale)')" oninput="setCustomValidity('')"required />  <!-- Il valore può essere scritto senza o al massimo con la virgola come separatore -->
+                <input type="text" name="prezzo" placeholder="Inserire il prezzo" pattern= "^\d+(.\d+)?$"  title="Inserisci un prezzo valido (valore numerico con punto come separatore decimale)"
+                oninvalid="setCustomValidity('Inserisci un prezzo valido (valore numerico con punto come separatore decimale)')" oninput="setCustomValidity('')"required />
+                <input type="file" id="fileUploadInput" class="file-input" name="immagine" accept="image/*" />
+                <input type="submit" class="submit-btn" value="Aggiungi" />
+            </form>
+        </div> 
+    </div>   
+</body>
+</html>

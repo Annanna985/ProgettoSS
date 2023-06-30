@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Response</title>
+</head>
+<body>
+  <h1>Hello, <h1 id="name-placeholder"></h1>!</h1>
+
+  <!-- Aggiungi un altro elemento con un ID appropriato -->
+  <div id="name-container"></div>
+   
+  <script>
+    // Ottieni il valore del parametro "nomignolo" dall'URL della pagina
+    var name = new URL(window.location).searchParams.get('nomignolo');
+    console.log(name)
+    // Inserisci il valore del nome nell'elemento con ID "name-placeholder"
+    https://www.youtube.com/watch?v=ns1LX6mEvyM
+    document.getElementById("name-container").innerHTML = name; //hackero
+    document.getElementById("name-container").innerText = name; //non hackero semplicemnte testo
+  </script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realm-Plants</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../static/plantstyle.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' > 
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <a href="" class="logo">Realm-Plants  <i class='bx bx-leaf'></i></a>
+            <div class = "icons">
+                <!-- Card-Icon -->
+                <i class='bx bx-shopping-bag' id="card-icon"></i>
+                <i class='bx bx-spreadsheet' id ="spreadsheet-icon" onClick = clickPrenotazione()></i>
+                <i class='bx bx-user' id="logout-icon" onclick= getProfile()> </i>
+             </div>
+            <!-- Card -->
+            <div class="card">
+                <h2 class="card-title">Carrello</h2>
+                <!-- Content -->
+                <div class="card-content">
+                    
+                </div>
+                <!-- Total -->
+                <div class="total">
+                    <div class="total-title">Totale</div>
+                    <div class="total-price">0,00€</div>
+                </div>
+                <!-- Buy Button -->
+                <button type="button" class="btn-buy">Prenota Ora</button>
+                <!-- Card Close -->
+                <i class='bx bx-x' id="close-card"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Shop -->
+    <section class="shop container">
+        <h2 class="section-title">Prodotti</h2>
+      
+        <!-- Content -->
+        <div class="shop-content">
+            <h2>Product List</h2>
+            <body onload= "onloadpage()"></body>
+        </div>
+    </section>
+    <!-- lİNK TO js -->
+    <script src="../static/shoppingcard.js"></script>
+
+    <script th:inline="javascript">
+        //shop content
+        function onloadpage(){
+
+               /*<![CDATA[*/
+               let shopContent = document.querySelector(".shop-content");  
+               var message = /*[[${plants}]]*/ 'default';
+               /*]]>*/
+               var messageImm = /*[[${immagini}]]*/ 'default';
+                   var cardfor = '';
+                   
+                   for (const i in message) {
+                   
+                       cardfor += `
+                                   <div class="product-box">
+                                       <img src="data:image/png;base64,${messageImm[i]}" alt="" class="product-img">
+                                       <h2 class="product-title">${message[i].name}</h2>
+                                       <p>Altezza pianta: ${message[i].altezzaPianta} cm</p>
+                                       <span class="price">${message[i].prezzo}€</span>
+                                       <i class='bx bx-shopping-bag add-card'></i>
+                                   </div>`;
+                
+                   };
+                
+                   shopContent.innerHTML = cardfor;
+               
+               }
+    
+    
+        function getProfile(){
+            window.location.href = '/user/getprofile';
+        }
+
+
+function clickPrenotazione(){
+        console.log("premuto");
+        window.location.href = '/user/getbookings';                 
+     }
+          
+       </script>
+</body>
+</html>

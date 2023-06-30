@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realm-Plants</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../static/plantstyle.css">
+    <!-- Box Icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' > 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script th:inline="javascript"> 
+     //shop content
+     function onloadpage(){
+
+/*<![CDATA[*/
+let shopContent = document.querySelector(".shop-content");  
+var message = /*[[${plants}]]*/ 'default';
+/*]]>*/
+var messageImm = /*[[${immagini}]]*/ 'default';
+    var cardfor = '';
+    
+    for (const i in message) {
+    
+        cardfor += `
+                    <div class="product-box">
+                        <img src="data:image/png;base64,${messageImm[i]}" alt="" class="product-img">
+                        <h2 class="product-title">${message[i].name}</h2>
+                        <p>Altezza pianta: ${message[i].altezzaPianta} cm</p>
+                        <span class="price">${message[i].prezzo}€</span>
+                        <a href="#" onclick="deletePlant('${message[i].id}')">
+                            <i class='bx bx-x cancel-card'></i>
+                        </a>
+                    </div>`;
+ 
+    };
+ 
+    shopContent.innerHTML = cardfor;
+
+}
+
+function deletePlant(id) {
+      $.ajax({
+        url: '/admin/deleteplant/' + id,
+        type: 'DELETE',
+        success: function(response) {
+          var data = JSON.parse(response);
+          var success = data.success;
+          var message = data.message;
+
+          if (success) {
+            console.log(message);
+            alert("pianta cancellata")
+            window.location.href = '/admin/getplants'
+          } else {
+            console.log(message);
+            alert("impossibile pianta cancellata")
+            window.location.href = '/admin/getplants'
+          }
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+          console.log('Errore nella richiesta AJAX: ' + textStatus);
+        }
+      });
+    }
+
+    
+     function addClick(){
+        console.log("premuto");
+        window.location.href = '/admin/addplant';                 
+     }
+
+     function addClickPrenotazione(){
+        console.log("premuto");
+        window.location.href = '/admin/getbookings';                 
+     }
+     function getProfile(){
+            window.location.href = '/admin/getprofile';
+     }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <a href="" class="logo">Realm-Plants  <i class='bx bx-leaf'></i></a>
+            <div>
+                <i class='bx bx-spreadsheet' id ="spreadsheet-icon" onClick = addClickPrenotazione()></i>
+                <!-- Card-Icon -->
+                <i class='bx bx-plus-circle' id="add-icon" onClick = addClick()></i>
+                <i class="bx bx-user" id="logout-icon" onClick=getProfile()></i>
+            </div>
+        </div>
+    </header>
+    <!-- Shop -->
+    <section class="shop container">
+        <h2 class="section-title">Prodotti</h2>
+      
+        <!-- Content -->
+        <div class="shop-content">
+            <h2>Product List</h2>
+            <body onload= "onloadpage()"></body>
+        
+        </div>
+    </section>
+
+    
+
+</body>
+</html>

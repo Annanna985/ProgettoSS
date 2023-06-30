@@ -1,0 +1,139 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< com.example:progettoSS >-----------------------
+[INFO] Building progettoSS 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:resources (default-resources) @ progettoSS ---
+[INFO] Copying 1 resource from src/main/resources to target/classes
+[INFO] Copying 45 resources from src/main/resources to target/classes
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ progettoSS ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-resources-plugin:3.3.1:testResources (default-testResources) @ progettoSS ---
+[INFO] skip non existing resourceDirectory /Users/anna/Desktop/progettoSS/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ progettoSS ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0:test (default-test) @ progettoSS ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running com.example.progettoSS.ProgettoSsApplicationTests
+15:04:17.600 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.progettoSS.ProgettoSsApplicationTests]: ProgettoSsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:04:17.714 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.progettoSS.ProgettoSsApplication for test class com.example.progettoSS.ProgettoSsApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.1.0)
+
+2023-06-30T15:04:18.206+02:00  WARN 12757 --- [           main] ory$DuplicateJsonObjectContextCustomizer : 
+
+Found multiple occurrences of org.json.JSONObject on the class path:
+
+	jar:file:/Users/anna/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar!/org/json/JSONObject.class
+	jar:file:/Users/anna/.m2/repository/org/json/json/20210307/json-20210307.jar!/org/json/JSONObject.class
+
+You may wish to exclude one of them to ensure predictable runtime behavior
+
+2023-06-30T15:04:18.229+02:00  INFO 12757 --- [           main] c.e.p.ProgettoSsApplicationTests         : Starting ProgettoSsApplicationTests using Java 17.0.2 with PID 12757 (started by anna in /Users/anna/Desktop/progettoSS)
+2023-06-30T15:04:18.230+02:00  INFO 12757 --- [           main] c.e.p.ProgettoSsApplicationTests         : No active profile set, falling back to 1 default profile: "default"
+2023-06-30T15:04:19.166+02:00  INFO 12757 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-30T15:04:19.168+02:00  INFO 12757 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-06-30T15:04:19.197+02:00  INFO 12757 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 0 JDBC repository interfaces.
+2023-06-30T15:04:19.220+02:00  INFO 12757 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2023-06-30T15:04:19.223+02:00  INFO 12757 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-30T15:04:19.235+02:00  INFO 12757 --- [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2023-06-30T15:04:19.755+02:00  INFO 12757 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-30T15:04:20.033+02:00  INFO 12757 --- [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3965bdf9
+2023-06-30T15:04:20.037+02:00  INFO 12757 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-30T15:04:20.204+02:00  INFO 12757 --- [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-30T15:04:20.311+02:00  INFO 12757 --- [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.2.2.Final
+2023-06-30T15:04:20.315+02:00  INFO 12757 --- [           main] org.hibernate.cfg.Environment            : HHH000406: Using bytecode reflection optimizer
+2023-06-30T15:04:20.557+02:00  INFO 12757 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-06-30T15:04:20.761+02:00  INFO 12757 --- [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2023-06-30T15:04:20.867+02:00  WARN 12757 --- [           main] org.hibernate.dialect.Dialect            : HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+2023-06-30T15:04:20.874+02:00  INFO 12757 --- [           main] org.hibernate.orm.dialect                : HHH035001: Using dialect: org.hibernate.dialect.MySQLDialect, version: 5.5
+2023-06-30T15:04:21.145+02:00  INFO 12757 --- [           main] o.h.b.i.BytecodeProviderInitiator        : HHH000021: Bytecode provider name : bytebuddy
+2023-06-30T15:04:21.922+02:00  INFO 12757 --- [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-30T15:04:21.928+02:00  INFO 12757 --- [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-30T15:04:22.179+02:00  WARN 12757 --- [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-30T15:04:22.374+02:00  INFO 12757 --- [           main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-06-30T15:04:23.562+02:00  INFO 12757 --- [           main] c.e.p.ProgettoSsApplicationTests         : Started ProgettoSsApplicationTests in 5.637 seconds (process running for 6.795)
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.796 s - in com.example.progettoSS.ProgettoSsApplicationTests
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] 
+[INFO] --- maven-jar-plugin:3.3.0:jar (default-jar) @ progettoSS ---
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:3.1.0:repackage (repackage) @ progettoSS ---
+[INFO] Replacing main artifact /Users/anna/Desktop/progettoSS/target/progettoSS-0.0.1-SNAPSHOT.jar with repackaged archive, adding nested dependencies in BOOT-INF/.
+[INFO] The original artifact has been renamed to /Users/anna/Desktop/progettoSS/target/progettoSS-0.0.1-SNAPSHOT.jar.original
+[INFO] 
+[INFO] >>> spotbugs-maven-plugin:4.3.0:check (default) > :spotbugs @ progettoSS >>>
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.3.0:spotbugs (spotbugs) @ progettoSS ---
+[INFO] Fork Value is true
+     [java] WARNING: A terminally deprecated method in java.lang.System has been called
+     [java] WARNING: System::setSecurityManager has been called by edu.umd.cs.findbugs.ba.jsr305.TypeQualifierValue (file:/Users/anna/.m2/repository/com/github/spotbugs/spotbugs/4.3.0/spotbugs-4.3.0.jar)
+     [java] WARNING: Please consider reporting this to the maintainers of edu.umd.cs.findbugs.ba.jsr305.TypeQualifierValue
+     [java] WARNING: System::setSecurityManager will be removed in a future release
+[INFO] Done SpotBugs Analysis....
+[INFO] 
+[INFO] <<< spotbugs-maven-plugin:4.3.0:check (default) < :spotbugs @ progettoSS <<<
+[INFO] 
+[INFO] 
+[INFO] --- spotbugs-maven-plugin:4.3.0:check (default) @ progettoSS ---
+[INFO] BugInstance size is 0
+[INFO] Error size is 0
+[INFO] No errors/warnings found
+[INFO] 
+[INFO] -----------------------< com.example:progettoSS >-----------------------
+[INFO] Building progettoSS 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- sonar-maven-plugin:3.9.1.2184:sonar (default-cli) @ progettoSS ---
+[INFO] User cache: /Users/anna/.sonar/cache
+[INFO] SonarQube version: 8.0.0.43074
+[INFO] Default locale: "it_IT", source code encoding: "UTF-8"
+[INFO] Load global settings
+[INFO] Load global settings (done) | time=300ms
+[INFO] Server id: 1BD809FA-AWHW8ct9-T_TB3XqouNu
+[INFO] User cache: /Users/anna/.sonar/cache
+[INFO] Load/download plugins
+[INFO] Load plugins index
+[INFO] Load plugins index (done) | time=261ms
+[INFO] Load/download plugins (done) | time=509ms
+[INFO] Loaded core extensions: developer-scanner
+[INFO] Load project settings for component key: 'esamess_plantcommerce'
+[INFO] Load project settings for component key: 'esamess_plantcommerce' (done) | time=201ms
+[INFO] Process project properties
+[INFO] Execute project builders
+[INFO] Execute project builders (done) | time=2ms
+[INFO] Project key: esamess_plantcommerce
+[INFO] Base dir: /Users/anna/Desktop/progettoSS
+[INFO] Working dir: /Users/anna/Desktop/progettoSS/target/sonar
+[INFO] Load project branches
+[INFO] Load project branches (done) | time=298ms
+[INFO] Check ALM binding of project 'esamess_plantcommerce'
+[WARNING] Failed to check if project 'esamess_plantcommerce' is bound
+[INFO] Detected project binding: ERROR
+[INFO] Check ALM binding of project 'esamess_plantcommerce' (done) | time=156ms
+[INFO] Load project pull requests
+[INFO] Load project pull requests (done) | time=183ms
+[INFO] Load branch configuration
+[INFO] Load branch configuration (done) | time=15ms
+[INFO] Load quality profiles
+[INFO] Load quality profiles (done) | time=306ms
+[INFO] Load active rules

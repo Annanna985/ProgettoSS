@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" name="viewport">
+    <title>Realm-Plants</title>
+	<link rel="stylesheet" href="../static/profile.css">
+      <!-- Box Icons -->
+      <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' > 
+
+      <script th:inline="javascript">
+
+        function onloadf(){
+                    let content = document.querySelector(".wrapper"); 
+                /*<![CDATA[*/
+                    var user = /*[[${user}]]*/ 'default';
+                    /*]]>*/
+                    var info = '';
+                    info = `
+                        <div class="right">
+                            <div class="info">
+                                <h3>Le tue informazioni</h3>
+                                <div class="info_data">
+                                    <div class="data">
+                                        <h4>Nome</h4>
+                                        <p>${user.name}</p>
+                                        <div class="data">
+                                            <h4>Cognome</h4>
+                                            <p>${user.surname}</p>
+                                        </div>
+                                        <div class="data">
+                                            <h4>Email</h4>
+                                            <p>${user.email}</p>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                        </div>
+                        <div class="esci-button">
+                   
+                            <button class = "logout-btn" onClick=logout()>Logout</button>
+           
+                        </div>`;
+
+                    content.innerHTML = info; // content.textContent = info; come sostituzione
+            }
+
+        function logout(){
+            console.log("premuto");
+            if (confirm("Sei sicuro di voler uscire?")){
+                window.location.href = '/user/logout';
+            }   
+        }
+
+        function homeClick(){
+            console.log("premuto");
+            window.location.href = '/user/getplants';
+        } 
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Nav -->
+        <div class="nav container">
+            <a href="" class="logo">Realm-Plants<i class='bx bx-leaf'></i></a>
+            <i class='bx bx-home' id="home-icon" onClick = homeClick()> </i>
+        </div>
+    </header>
+
+    <div class="wrapper">
+        <body onload= "onloadf()"></body>
+    </div>
+
+</body>
+</html>
